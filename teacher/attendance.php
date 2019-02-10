@@ -153,8 +153,31 @@ if($_SESSION['name']!='oasis')
      $batch = 2020;
      $all_query = mysql_query("select * from students where st_batch='$batch' order by st_id asc");
 
-    
-  }
+     while ($data = mysql_fetch_array($all_query)) {
+       $i++;
+     ?>
+  <body>
+     <tr>
+       <td><?php echo $data['st_id']; ?> <input type="hidden" name="stat_id[]" value="<?php echo $data['st_id']; ?>"> </td>
+       <td><?php echo $data['st_name']; ?></td>
+       <td><?php echo $data['st_dept']; ?></td>
+       <td><?php echo $data['st_batch']; ?></td>
+       <td><?php echo $data['st_sem']; ?></td>
+       <td><?php echo $data['st_email']; ?></td>
+       <td>
+         <label>Present</label>
+         <input type="radio" name="st_status[<?php echo $radio; ?>]" value="Present" >
+         <label>Absent </label>
+         <input type="radio" name="st_status[<?php echo $radio; ?>]" value="Absent" checked>
+       </td>
+     </tr>
+  </body>
+
+     <?php
+
+        $radio++;
+      } 
+}
       ?>
     </table>
 
