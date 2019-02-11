@@ -75,7 +75,28 @@ if($_SESSION['name']!='oasis')
 
     </form>
 
-    <h3>Mass Report</h3> 
+    <h3>Mass Report</h3>
+
+    <form method="post" action="">
+
+    <label>Select Subject</label>
+    <select name="course">
+    <option  value="algo">Analysis of Algorithms</option>
+         <option  value="algolab">Analysis of Algorithms Lab</option>
+        <option  value="dbms">Database Management System</option>
+        <option  value="dbmslab">Database Management System Lab</option>
+        <option  value="weblab">Web Programming Lab</option>
+        <option  value="os">Operating System</option>
+        <option  value="oslab">Operating System Lab</option>
+        <option  value="obm">Object Based Modeling</option>
+        <option  value="softcomp">Soft Computing</option>
+    </select>
+    <p>  </p>
+      <label>Date ( yyyy-mm-dd )</label>
+      <input type="text" name="date">
+      <input type="submit" name="sr_date" value="Go!" >
+    </form>
+
     <br>
 
     <br>
