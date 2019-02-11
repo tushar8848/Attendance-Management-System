@@ -165,7 +165,65 @@ if($_SESSION['name']!='oasis')
     </table>
 
 
-   
+    <form method="post" action="" class="form-horizontal col-md-6 col-md-offset-3">
+    <table class="table table-striped">
+
+    <?php
+
+
+    if(isset($_POST['sr_btn'])){
+
+       $count_pre = 0;
+       $i= 0;
+       $count_tot;
+       if ($row=mysql_fetch_row($singleT))
+       {
+       $count_tot=$row[0];
+       }
+       while ($data = mysql_fetch_array($single)) {
+       $i++;
+       
+       if($i <= 1){
+     ?>
+
+
+     <tbody>
+      <tr>
+          <td>Student Reg. No: </td>
+          <td><?php echo $data['stat_id']; ?></td>
+      </tr>
+
+           <?php
+         //}
+        
+        // }
+
+      ?>
+      
+      <tr>
+        <td>Total Class (Days): </td>
+        <td><?php echo $count_tot; ?> </td>
+      </tr>
+
+      <tr>
+        <td>Present (Days): </td>
+        <td><?php echo $data[1]; ?> </td>
+      </tr>
+
+      <tr>
+        <td>Absent (Days): </td>
+        <td><?php echo $count_tot -  $data[1]; ?> </td>
+      </tr>
+
+    </tbody>
+
+   <?php
+
+     }  
+    }}
+     ?>
+    </table>
+  </form>
 
   </div>
 
